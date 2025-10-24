@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Spotify</title>
+    <script>
+      // on écrit en js ici...
+
+      // ajouter un ecouteur de scroll sur le document
+
+      // cet écouteur déclenche une fonction anonyme :
+      // - si la window a un scroll > 0, alors ajouter la classe sticky au header
+      // - sinon retirer la classe sticky du header
+      document.addEventListener("scroll", function (event) {
+        console.log(window.scrollY);
+        if (window.scrollY > 0) {
+          document.getElementById("site-header").classList.add("sticky");
+        } else {
+          document.getElementById("site-header").classList.remove("sticky");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("menu-btn").addEventListener("click", function (event) {
+          if (!document.getElementById("main-nav").classList.contains("visible")) {
+            document.getElementById("main-nav").classList.add("visible");
+          } else {
+            document.getElementById("main-nav").classList.remove("visible");
+          }
+        });
+      });
+    </script>
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" id="site-header">
       <div class="container">
         <a href="#" class="logo-link">
           <svg
@@ -71,7 +98,7 @@
             />
           </svg>
         </a>
-        <nav>
+        <nav id="main-nav">
           <ul class="clearfix">
             <li><a href="#">Premium</a></li>
             <li><a href="#">Aide</a></li>
@@ -81,6 +108,11 @@
             <li><a href="#">Se connecter</a></li>
           </ul>
         </nav>
+        <button class="menu-btn" id="menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -88,14 +120,13 @@
       <section class="section1">
         <div class="container">
           <div>
-            <h1>Obtenez 3 mois pour 0,99 €</h1>
+            <h1>Obtenez 3&nbsp;mois pour 0,99&nbsp;€</h1>
             <h2>Seulement 9,99 € /par mois ensuite. Annulez à tout moment.</h2>
-            <a href="#">Démarrer Spotify Premium</a>
+            <a class="button button--blue" href="#">Démarrer Spotify Premium</a>
           </div>
           <footer>
             <small>
-              Offre réservée aux utilisateurs n'ayant jamais essayé Spotify
-              Premium. <br />
+              Offre réservée aux utilisateurs n'ayant jamais essayé Spotify Premium. <br />
               Offre valable jusqu'au 31 déc. 2025. Offre soumise à conditions.
             </small>
           </footer>
@@ -103,7 +134,7 @@
       </section>
       <section class="section2">
         <div class="container">
-          <h2>Pourquoi passer à Spotify premium ?</h2>
+          <h2>Pourquoi passer à Spotify premium&nbsp;?</h2>
           <ul>
             <li>
               <article>
@@ -141,22 +172,22 @@
           <h2>Écoutez gratuitement ou abonnez-vous à Spotify Premium.</h2>
           <ul class="offers">
             <li>
-              <article>
+              <article class="card">
                 <h3>Spotify Free</h3>
                 <h4>0,00 €<small>/ mois</small></h4>
                 <ul>
                   <li>Lecture aléatoire</li>
-                  <li>Sans interruptions</li>
-                  <li>Zappez les titres sans limite</li>
-                  <li>Écouter hors connexion</li>
-                  <li>Écoutez les titres de votre choix</li>
-                  <li>Son de qualité supérieure</li>
+                  <li class="disabled">Sans interruptions</li>
+                  <li class="disabled">Zappez les titres sans limite</li>
+                  <li class="disabled">Écouter hors connexion</li>
+                  <li class="disabled">Écoutez les titres de votre choix</li>
+                  <li class="disabled">Son de qualité supérieure</li>
                 </ul>
-                <a href="#">Démarrer</a>
+                <a href="#" class="button button--white">Démarrer</a>
               </article>
             </li>
             <li>
-              <article>
+              <article class="card">
                 <h3>Spotify Premium</h3>
                 <h4>3 mois pour 0,99 €</h4>
                 <ul>
@@ -167,16 +198,12 @@
                   <li>Écoutez les titres de votre choix</li>
                   <li>Son de qualité supérieure</li>
                 </ul>
-                <a href="#">Démarrer Spotify Premium</a>
+                <a href="#" class="button button--green">Démarrer Spotify Premium</a>
               </article>
             </li>
           </ul>
           <footer>
-            <small>
-              Seulement 9,99 € /par mois ensuite. Offre réservée aux
-              utilisateurs n'ayant jamais essayé Spotify Premium. Offre valable
-              jusqu'au 31 déc. 2025.<br />Offre soumise à conditions.
-            </small>
+            <small> Seulement 9,99 € /par mois ensuite. Offre réservée aux utilisateurs n'ayant jamais essayé Spotify Premium. Offre valable jusqu'au 31 déc. 2025.<br />Offre soumise à conditions. </small>
           </footer>
         </div>
       </section>
