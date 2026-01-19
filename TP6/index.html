@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design guide</title>
+    <link rel="stylesheet" href="/src/css/main.scss" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h2>.button</h2>
+        <p>
+          <button class="button button--lg button--primary">Bouton</button>
+          <button class="button button--primary">Bouton</button>
+          <button class="button button--sm button--primary">Bouton</button>
+        </p>
+        <p>
+          <button class="button button--lg button--secondary">Bouton</button>
+          <button class="button button--secondary">Bouton</button>
+          <button class="button button--sm button--secondary">Bouton</button>
+        </p>
+        <p>
+          <a href="#" class="button button--lg button--danger">Bouton</a>
+          <a href="#" class="button button--danger">Bouton</a>
+          <a href="#" class="button button--sm button--danger">Bouton</a>
+        </p>
+      </section>
+      <section>
+        <h2>.card</h2>
+        <div style="display: flex; gap: 1rem; align-items: flex-start">
+          <article class="card">
+            <img src="/images/totoro.jpg" alt="" class="card__image" />
+            <h2 class="card__title">Card title</h2>
+            <p class="card__text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="button button--primary p--6">Button</a>
+          </article>
+          <article class="card">
+            <img src="/images/test2.png" alt="" class="card__image" />
+            <h2 class="card__title">Card title</h2>
+            <p class="card__text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="button button--primary">Button</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
